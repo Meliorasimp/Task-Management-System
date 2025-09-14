@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Task_Management_System.Models.AddTaskViewModel;
+
+<h1>Add Task</h1>
+<form method="post">
+    <div class="mt-3">
+        <label class="form-label">Title</label>
+        <input class="form-control" type="text" asp-for="Title" />
+    </div>
+    <div class="mt-3">
+    <label class="form-label">Description</label>
+    <textarea class="form-control" asp-for="Description"></textarea>
+    </div>
+    <div class="mt-3">
+    <label class="form-label">Due Date</label>
+    <input type="date" asp-for="DueDate">
+    </div>
+    <div class="t3 a tex-row">
+    <label class="form-label">Completed</label>
+
+    <input type="radio" id="isCompletedYes" name="isCompleted" value="true" asp-for="IsCompleted">
+    <label for="isCompletedYes">Yes</label>
+
+    <input type="radio" id="isCompletedNo" name="isCompleted" value="false" asp-for="IsCompleted">
+    <label for="isCompletedNo">No</label>
+    </div>
+    <div class="mt-3">
+    <label class="form-label">Priority</label><br>
+
+    <input type="radio" asp-for="Priority" value="1" id="priorityLow" class="btn-check">
+    <label for="priorityLow" class="btn btn-outline-primary">Low</label>
+
+    <input type="radio" asp-for="Priority" value="2" id="priorityMedium" class="btn-check">
+    <label for="priorityMedium" class="btn btn-outline-warning">Medium</label>
+
+    <input type="radio" asp-for="Priority" value="3" id="priorityHigh" class="btn-check">
+    <label for="priorityHigh" class="btn btn-outline-danger">High</label>
+    </div>
+
+    <div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
